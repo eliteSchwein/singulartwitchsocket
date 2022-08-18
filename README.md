@@ -1,0 +1,2 @@
+# singulartwitchsocket
+Simplified Twitch Websocket
