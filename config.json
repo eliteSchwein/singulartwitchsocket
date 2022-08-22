@@ -1,0 +1,11 @@
+{
+  "connection": {
+    "client_id": "",
+    "access_token": ""
+  },
+  "limits": {
+    "session_limit": 10,
+    "session_websockets_limit": 10,
+    "websockets_limit": 50
+  }
+}
