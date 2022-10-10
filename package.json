@@ -8,8 +8,8 @@
     "debugstart": "node --trace_gc --expose-gc --trace-deprecation --trace-warnings --trace-uncaught --track-heap-objects dist/index.js",
     "checkcodestyle": "npx eslint ./**",
     "autofixcodestyle": "npx eslint ./** --fix",
-    "build": "ncc build -m -d src/Application.ts -o dist",
-    "watch": "ncc build -w -d src/Application.ts -o dist"
+    "build": "esbuild src/Application.ts --analyze=verbose --tree-shaking=true --bundle --sourcemap --minify --color=true --platform=node --outfile=dist/index.js",
+    "watch": "esbuild src/Application.ts --analyze=verbose --tree-shaking=true --bundle --sourcemap --color=true --platform=node --watch --outfile=dist/index.js"
   },
   "repository": {
     "type": "git",
@@ -28,7 +28,6 @@
     "@twurple/eventsub": "^5.2.1",
     "@twurple/pubsub": "^5.2.1",
     "@types/node": "^18.7.6",
-    "@vercel/ncc": "^0.34.0",
     "async-wait-until": "2.0.12",
     "axios": "^0.27.2",
     "bytes": "^3.1.2",
@@ -38,6 +37,7 @@
     "node-fetch": "^3.2.10",
     "typescript": "^4.7.4",
     "websocket-ts": "^1.1.1",
+    "esbuild": "^0.15.10",
     "ws": "^8.8.1"
   }
 }
